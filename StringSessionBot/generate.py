@@ -129,7 +129,7 @@ async def generate_session(bot, msg, telethon=False):
         await client.send_message("me", text)
         #await client.join_chat("@Official_K_LegendBot")
     await client.disconnect()
-    await phone_code_msg.reply("Successfully String  Session Has Been Generated {} \n\nPlease check your saved messages!".format("telethon" if telethon else "pyrogram"), reply_markup=InlineKeyboardMarkup(Data.support_button)
+    await phone_code_msg.reply("Successfully String  Session Has Been Generated {} \n\nPlease check your saved messages!".format("telethon" if telethon else "pyrogram"), reply_markup=InlineKeyboardMarkup(Data.support_button))
 
 
 async def cancelled(msg):
