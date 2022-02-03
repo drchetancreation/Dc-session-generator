@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden
 from Config import MUST_JOIN
 
-
+"""
 @Client.on_message(~filters.edited & filters.incoming & filters.private, group=-1)
 async def must_join_channel(bot: Client, msg: Message):
     if not MUST_JOIN:  # Not compulsory
@@ -30,3 +30,4 @@ async def must_join_channel(bot: Client, msg: Message):
                 pass
     except ChatAdminRequired:
         print(f"I'm not admin in the MUST_JOIN chat : {MUST_JOIN} !")
+"""
