@@ -1,2 +1,2 @@
-# STRING-GENERATE
-This is Bot Can Help U To Generate String Session 
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/LEGEND-OS/STRING)
