@@ -18,18 +18,18 @@ You can use me to generate pyrogram and telethon string session. Use the below b
     ]
 
     generate_button = [
-        [InlineKeyboardButton(" Start Generating Session ", callback_data="generate")]
+        [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")]
     ]
 
     # Rest Buttons
     buttons = [
         [InlineKeyboardButton(" Start Generating Session ", callback_data="generate")],
-        [InlineKeyboardButton(" Support Chat ", url="https://t.me/Official_LegendBot")],
+        [InlineKeyboardButton(👨‍💻" Support Chat 👨‍💻", url="https://t.me/LegendBot_XD")],
         [
             InlineKeyboardButton("How to Use ❔", callback_data="help"),
             InlineKeyboardButton(" About", callback_data="about")
         ],
-        [InlineKeyboardButton("🇮🇳 Owner 🇮🇳", url="https://t.me/The_LegendBoy")],
+        [InlineKeyboardButton("🇮🇳 Owner 🇮🇳", url="https://t.me/LegendBoy_XD")],
     ]
 
     # Help Message
