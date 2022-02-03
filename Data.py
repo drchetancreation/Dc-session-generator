@@ -41,10 +41,12 @@ You can use me to generate pyrogram and telethon string session. Use the below b
 
     # About Message
     ABOUT = """
-**About Me** 
+👨‍💻 **About Me** 
 
 A telegram bot to generate pyrogram and telethon string session...
 
+Telethon = UserBot
+Pyrogram = MusicBot
 Framework : [Pyrogram](docs.pyrogram.org)
 
 Language : [Python](www.python.org)
