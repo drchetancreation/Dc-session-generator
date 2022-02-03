@@ -14,7 +14,7 @@ You can use me to generate pyrogram and telethon string session. Use the below b
     # Home Button
     home_buttons = [
         [InlineKeyboardButton("⚜ Start Generating Session ⚜", callback_data="generate")],
-        [InlineKeyboardButton(text=" Return Home ", callback_data="home")]
+        [InlineKeyboardButton(text=" Back ", callback_data="home")]
     ]
 
     generate_button = [
@@ -23,8 +23,8 @@ You can use me to generate pyrogram and telethon string session. Use the below b
 
     # Rest Buttons
     buttons = [
-        [InlineKeyboardButton(" Start Generating Session ", callback_data="generate")],
-        [InlineKeyboardButton("👨‍💻 Support Chat 👨‍💻", url="https://t.me/LegendBot_XD")],
+        [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")],
+        [InlineKeyboardButton("👨‍💻 Repo 👨‍💻", url="https://t.me/LegendBot_XD")],
         [
             InlineKeyboardButton("How to Use ❔", callback_data="help"),
             InlineKeyboardButton(" About", callback_data="about")
@@ -45,9 +45,9 @@ You can use me to generate pyrogram and telethon string session. Use the below b
 
 A telegram bot to generate pyrogram and telethon string session...
 
-Telethon = UserBot
-Pyrogram = MusicBot
-Framework : [Pyrogram](docs.pyrogram.org)
+[Pyrogram](docs.pyrogram.org)
+[Telethon](docs.telethon.org)
 
 Language : [Python](www.python.org)
+            **Regarding ~ **@LegendBot_XD
 """
