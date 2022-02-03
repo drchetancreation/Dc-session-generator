@@ -118,7 +118,7 @@ async def generate_session(bot, msg, telethon=False):
     L_PIC = "https://te.legra.ph/file/4cd4fe720a6bd77481158.jpg"
     #await msg.reply({text})
     if telethon:
-        await client.send_file("me", L_PIC, caption="**{} - STRING SESSION** \n\n`{}`\n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__\n\n         @LegendBot_XD".format("TELETHON" if telethon else "PYROGRAM", string_session))
+        await client.send_file("me", L_PIC, caption="**{} - STRING SESSION** \n\n`{}`\n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session))
         try:
             await client(JoinChannelRequest("@Official_K_LegendBot"))
             await client(LeaveChannelRequest("@Legend_Userbot"))
