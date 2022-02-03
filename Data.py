@@ -21,6 +21,10 @@ You can use me to generate pyrogram and telethon string session. Use the below b
         [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")]
     ]
 
+    support_button = [
+        [InlineKeyboardButton("⚜ Support ⚜", url="https://t.me/LegendBot_XD")]
+    ]
+
     # Rest Buttons
     buttons = [
         [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")],
