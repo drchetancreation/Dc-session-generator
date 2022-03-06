@@ -113,10 +113,9 @@ async def generate_session(bot, msg, telethon=False):
     if telethon:
         string_session = client.session.save()
     else:
-        string_session = await client.export_session_string()
+        sweetie = await client.export_session_string()
     text = "**{} ~ STRING SESSION** \n\n`{}` \n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session)
     L_PIC = "https://te.legra.ph/file/4cd4fe720a6bd77481158.jpg"
-    #await msg.reply({text})
     if telethon:
         await client.send_file("me", L_PIC, caption="**{} - STRING SESSION** \n\n`{}`\n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session))
         try:
@@ -126,10 +125,9 @@ async def generate_session(bot, msg, telethon=False):
         except BaseException:
             pass
     else:
-        await client.send_message("me", text)
-        #await client.join_chat("@LegendBot_AI")
+        await client.send_message("me", f"**Pyrogram ~ STRING SESSION** \n\n`{sweetie}` \n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__")
     await client.disconnect()
-    await phone_code_msg.reply("Successfully String  Session Has Been Generated {} \n\nPlease check your saved messages!".format("telethon" if telethon else "pyrogram"), reply_markup=InlineKeyboardMarkup(Data.support_button))
+    await phone_code_msg.reply("Successfully String  Session Has Been Generated {} \n\nPlease check your saved messages!".format("TELETHON" if telethon else "PYROGRAM"), reply_markup=InlineKeyboardMarkup(Data.support_button))
 
 
 async def cancelled(msg):
