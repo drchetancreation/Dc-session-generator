@@ -112,12 +112,6 @@ async def generate_session(bot, msg, telethon=False):
             return
     if telethon:
         string_session = client.session.save()
-    else:
-        sweetie = await client.export_session_string()
-    text = "**{} ~ STRING SESSION** \n\n`{}` \n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session)
-    L_PIC = "https://te.legra.ph/file/4cd4fe720a6bd77481158.jpg"
-    if telethon:
-        await client.send_file("me", L_PIC, caption="**{} - STRING SESSION** \n\n`{}`\n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session))
         try:
             await client(JoinChannelRequest("@LegendBot_AI"))
             await client(LeaveChannelRequest("@Legend_Userbot"))
@@ -125,7 +119,12 @@ async def generate_session(bot, msg, telethon=False):
         except BaseException:
             pass
     else:
-        await client.send_message("me", f"**Pyrogram ~ STRING SESSION** \n\n`{sweetie}` \n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__")
+        string_session = await client.export_session_string()
+    L_PIC = "https://te.legra.ph/file/4cd4fe720a6bd77481158.jpg"
+    if telethon:
+        await client.send_file("me", L_PIC, caption="**{} - STRING SESSION** \n\n`{}`\n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session))
+    else:
+        await client.send_message("me", "**{} ~ STRING SESSION** \n\n`{sweetie}` \n\n• __Dont Share String Session With Anyone__\n• __Dont Invite Anyone To Heroku__".format("TELETHON" if telethon else "PYROGRAM", string_session))
     await client.disconnect()
     await phone_code_msg.reply("Successfully String  Session Has Been Generated {} \n\nPlease check your saved messages!".format("TELETHON" if telethon else "PYROGRAM"), reply_markup=InlineKeyboardMarkup(Data.support_button))
 
