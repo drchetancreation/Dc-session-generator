@@ -53,5 +53,5 @@ A telegram bot to generate pyrogram and telethon string session...
 [Telethon](docs.telethon.org)
 
 Language : [Python](www.python.org)
-            **Regarding ~ **@LegendBot_XD
+            **Regarding ~ **@drchetancreation 
 """
